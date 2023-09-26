@@ -103,7 +103,7 @@ function renderChatInterface() {
   chatInput.classList.add('chat-button');
   sendButton.textContent = 'Send';
 
-  // Create the "Create new chat room" button
+  // Create the "COPY" button
 const copyButton = document.createElement('button');
 copyButton.textContent = 'COPY';
 
@@ -501,6 +501,7 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
     });
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
+    displaySystemMessage ("loading complete...Welcome to Neuranet...");
 
     
     
@@ -582,7 +583,6 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
     renderChatInterface();
     addclients();
     listTotalclients();
-    displaySystemMessage ("loading complete...Welcome to Neuranet...");
   }
   
   
