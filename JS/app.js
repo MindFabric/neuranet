@@ -501,7 +501,7 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
     });
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
-    displaySystemMessage ("loading complete...Welcome to Neuranet...");
+    displaySystemMessage ("loading complete...Welcome to Neuranet...type /help to begin");
 
     
     
