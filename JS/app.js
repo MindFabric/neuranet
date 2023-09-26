@@ -63,8 +63,12 @@ db.collection('NN-init').doc(defaultRoomId).get()
 
 
 
+
+
 // Get a reference to the chat container element
 const chatContainer = document.getElementById('chat-container');
+
+
 
 // Create a function to render the chat interface
 function renderChatInterface() {
@@ -109,6 +113,7 @@ copyButton.addEventListener('click', () => {
 });
 
 // Add the button to the chat header
+
 
   
   chatInput.appendChild(inputField);
@@ -523,8 +528,6 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
 
   
   // CHECK IF ROOM EXISTS, IF NOT DEFAULT TO NN-GENERAL
-
-
   if (!roomID) {
     roomID = defaultRoomId;
   }
@@ -570,12 +573,16 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
 
   //// initializes the interface after the URL redirect
 
+
+
+
   function init(){ 
     addUserToNode(userId, roomID);
     checkFounder(roomID,userId);
     renderChatInterface();
     addclients();
     listTotalclients();
+    displaySystemMessage ("loading complete...Welcome to Neuranet...");
   }
   
   
