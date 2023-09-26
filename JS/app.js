@@ -529,45 +529,43 @@ totalButton.textContent = `${Math.round(ratio * 100)}%`;
   // CHECK IF ROOM EXISTS, IF NOT DEFAULT TO NN-GENERAL
   if (!roomID) {
     roomID = defaultRoomId;
-  }
-  
-  if (window.location.hostname === 'neuranet.io') {
+}
+
+const isLiveSite = window.location.hostname === 'neuranet.io';
+const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+
+if (isLiveSite) {
     const db = firebase.firestore();
     const nodesRef = db.collection('NN-init');
-  
-    if (roomID === defaultRoomId) {
-      
-      init();
-    } else {
-      nodesRef.doc(roomID).get().then((doc) => {
-        if (doc.exists) {
-          // The requested node exists, render the chat interface for it
-          
-          init();
 
-        } else {
-          // The requested node does not exist, redirect the user to the default node
-          window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
-          
-          init();
-        }
-      }).catch((error) => {
-        console.error('Error checking for node:', error);
-        // Redirect the user to the default node in case of an error
-        window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
-        
+    if (roomID === defaultRoomId) {
         init();
-      });
+    } else {
+        nodesRef.doc(roomID).get().then((doc) => {
+            if (doc.exists) {
+                // The requested node exists, render the chat interface for it
+                init();
+            } else {
+                // The requested node does not exist, redirect the user to the default node
+                window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
+                init();
+            }
+        }).catch((error) => {
+            console.error('Error checking for node:', error);
+            // Redirect the user to the default node in case of an error
+            window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
+            init();
+        });
     }
-  } else if (window.location.hostname === '127.0.0.1') {
+} else if (isLocalhost) {
     roomID = 'NN-General';
-    
     init();
-  } else {
-    window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
-    
-    init();
-  }
+} else {
+    // If you want to prevent redirection when testing on other domains, comment out the next two lines
+    // window.location.href = `https://neuranet.io?id=${defaultRoomId}`;
+    // init();
+}
+
 
 
   //// initializes the interface after the URL redirect
