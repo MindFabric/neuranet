@@ -3,7 +3,7 @@ export async function chatWithGPT(message) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer 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`,
+      "Authorization": `Bearer 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`,
     },
     body: JSON.stringify({
       "model": "gpt-3.5-turbo",

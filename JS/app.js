@@ -114,8 +114,6 @@ copyButton.addEventListener('click', () => {
 
 // Add the button to the chat header
 
-
-  
   chatInput.appendChild(inputField);
   chatInput.appendChild(sendButton);
   chatHeader.appendChild(copyButton);
@@ -172,7 +170,6 @@ sendButtonRef.addEventListener('click', () => {
         \n_____________\n 
         /about - to understand
         /home - navigate back to  the "NN-General" node
-        /mission - load current mission
         /help - view this help message\n
         /clear - clears all system messages
         /donate [amount] - become an early investor and support the cause
@@ -212,22 +209,6 @@ sendButtonRef.addEventListener('click', () => {
       inputFieldRef.value = '';
     } else if (command === 'home') {
       windowRelocate('General')
-      inputFieldRef.value = '';
-    } else if (command === 'mission') {
-      displaySystemMessage(
-        `:: MISSION 000 ::\n
-        \n ___________ 
-        PHASE_000: INSTANTIATION\n 
-        MISSION OBJECTIVE:\n 
-        Instantiate an active network of humans.\n  
-        As a client of NEURANET your task is to create new nodes and invite fellow associates to join.\n
-        \n ________________
-        MISSION\n
-         - Create a new node with a custom ID.\n 
-        - Share the node with your associates and start growing activity within your NEURANET node.\n 
-        - Submit new feature requests within the "NN-REQUESTS" node to help improve the network.
-        \n
-        /help for more.`);
       inputFieldRef.value = '';
     } else if (command === 'about') {
       displaySystemMessage(
@@ -640,6 +621,8 @@ function createNode(roomName) {
     });
     
   } 
+
+
 
 //// allows client to join a node given 
   function joinNode(x){ 
