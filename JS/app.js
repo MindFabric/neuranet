@@ -234,11 +234,9 @@ sendButtonRef.addEventListener('click', () => {
         `NEURANET.IO\n
         Collective Intelligence\n
         \n ________________
-        \n "NeuraNet is a cutting-edge project that harnesses the collective knowledge of humans around the world to create a massive neural network. NeuraNet has the potential to revolutionize the way we solve complex problems and make sense of the world around us. While NeuraNet is not yet fully AI-powered, it has the potential to become an unprecedented level of collective intelligence, paving the way for new breakthroughs in artificial intelligence. As the project continues to grow, the possibilities are endless, and the potential for NeuraNet to transform the future of technology is truly limitless." \n
-        - CHAT-GPT on NEURANET  \n
+        \n "Neuranet is a command line interface storyline and collective lore inititive. taking digital art to the next level with deeply woven and intertwined curations globally expanded."  \n
         \n __________________
         \n
-        a brain child between a human and CHATGPT.
         \n
         \n
         type /help to get started
