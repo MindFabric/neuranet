@@ -1042,8 +1042,8 @@ function generateQRCode(url) {
     text: url,
     width: 512,
     height: 512,
-    colorDark: "#041f00",
-    colorLight: "#00ff00",
+    colorDark: "black",
+    colorLight: "#f90",
     correctLevel: QRCode.CorrectLevel.H
   });
 
